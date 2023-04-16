@@ -1,7 +1,7 @@
 import React from "react";
 import BlogCard from "../components/BlogCard";
 import { Link, useLoaderData } from "react-router-dom";
-import bgImg from '../assets/images/mainImg.jpg'
+import bgImg from '../assets/images/mainImg.png'
 
 export default function Home() {
 
