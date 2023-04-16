@@ -1,6 +1,7 @@
 import React from "react";
 import BlogCard from "../components/BlogCard";
 import { Link, useLoaderData } from "react-router-dom";
+import bgImg from '../assets/images/mainImg.jpg'
 
 export default function Home() {
 
@@ -9,6 +10,9 @@ export default function Home() {
   return (
     <div className="home">
       <div className="home__image">
+        <div className="image__container">
+          <img src={bgImg} alt="" />
+        </div>
         <h1>React Blog</h1>
       </div>
       <div className="home__intro">
