@@ -17,9 +17,10 @@
       position: relative;
       img{
         width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         position: absolute;
-        top: -50%;
-        filter: saturate(1.5) contrast(1.3) brightness(.8);
       }
     }
   }
@@ -33,6 +34,7 @@
       margin: 0;
       padding: 0;
       font-size: 2rem;
+      font-weight: bold;
     }
     a {
       text-decoration: none;
@@ -61,6 +63,45 @@
     &:hover{
       background-color: #3771ed;
     }
+  }  
+}
+
+@media(max-width: 768px){
+  .home{
+    gap: 1rem;
+    &__intro {
+      font-size: 1.2rem;
+      gap: 0;
+      p:first-child {
+        font-size: 1.8rem;
+      }
+    }
+    &__image {
+      .image__container{
+        height: 15rem;
+      }
+    }
   }
-  
+}
+@media(max-width: 425px){
+  .home{
+    gap: .5rem;
+    &__intro {
+      font-size: 1rem;
+      gap: 0;
+      p:first-child {
+        font-size: 1.3rem;
+      }
+    }
+    &__btn {
+      padding: .5rem 1.2rem;
+      border-radius: 5px;
+      font-size: 1rem;
+    }  
+    &__image {
+      .image__container{
+        height: 10rem;
+      }
+    }
+  }
 }

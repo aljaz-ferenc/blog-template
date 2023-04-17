@@ -11,3 +11,28 @@
         font-size: 3rem;
     }
 }
+
+@media(max-width: 768px){
+    .posts{
+        h1{
+            font-size: 2rem;
+        }
+        &__cards{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3vw;
+        }
+    }
+  }
+@media(max-width: 425px){
+    .posts{
+        h1{
+            font-size: 1.8rem;
+        }
+        &__cards{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5vw;
+        }
+    }
+  }

@@ -13,7 +13,7 @@ export default function Home() {
         <div className="image__container">
           <img src={bgImg} alt="" />
         </div>
-        <h1>React Blog</h1>
+        {/* <h1>React Blog</h1> */}
       </div>
       <div className="home__intro">
         <p>Hey there! Welcome to my blog about frontend web development!</p>
