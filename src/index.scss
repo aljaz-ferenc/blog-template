@@ -5,6 +5,7 @@
 @import './sass/components/Home.scss';
 @import './sass/components/BlogCard.scss';
 @import './sass/components/Posts.scss';
+@import './sass/components/ProgressBar.scss';
 @import './sass/components/SinglePost.scss';
 
 //RESET
@@ -27,6 +28,7 @@ body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  position: relative;
   line-height: 1.5;
   margin: 0;
   background-color: $color-background;

@@ -5,6 +5,7 @@ import SanityBlockContent from '@sanity/block-content-to-react'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Link } from 'react-router-dom';
+import ProgressBar from '../components/ProgressBar';
 
 const dateFormatter = Intl.DateTimeFormat('en-GB', { dateStyle: 'full'})
 
@@ -37,6 +38,7 @@ useEffect(() => {
 
   return (
     <div className='post'>
+      <ProgressBar/>
       <Link className="home__btn" to='/' style={{marginRight: "1rem"}}>Home</Link>
       <Link className="home__btn" to='/posts'>All posts</Link>
       <hr style={{margin: "2rem 0" }} />
