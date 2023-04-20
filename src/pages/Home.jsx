@@ -16,7 +16,7 @@ export default function Home() {
         {/* <h1>React Blog</h1> */}
       </div>
       <div className="home__intro">
-        <p>Hey there! Welcome to my blog about frontend web development!</p>
+        <p>Hey there, welcome to my blog!</p>
         <p>
           This blog is all about my journey of learning frontend development,
           where I share my experiences, insights, and struggles along the way. I
