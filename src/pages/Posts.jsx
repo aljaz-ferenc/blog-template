@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Posts() {
   const posts = useLoaderData();
-
+console.log(posts);
   return (
     <div className="posts">
       <Link className="home__btn" to='/'>Home</Link>
@@ -30,7 +30,7 @@ export default function Posts() {
 }
 
 export async function postsLoader() {
-  return sanityClient.fetch(`*[_type == "post"]{
+  return sanityClient.fetch(`*[_type == "post"] | order(_createdAt desc){
     title, 
     slug, 
     description, 
