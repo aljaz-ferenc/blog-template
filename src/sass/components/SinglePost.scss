@@ -4,18 +4,28 @@
     max-width: 1200px;
     width: 90%;
     margin: 2rem auto;
+    line-height: 2;
+    letter-spacing: .5px;
     code{
         font-size: .9rem;
         font-family: 'Source Code Pro', monospace;
+    }
+    code:not(pre code){
+        background-color: #c7d0e4;
+        border-radius: 3px;
     }
     h1{
         position: sticky;
         top: 0;
         background-color: $color-background;
     }
+    h2{
+        margin-top: 5rem;
+    }
     pre{
         border-radius: 3px;
         background-color: rgb(11, 9, 33) !important;
+        margin: 2rem 0;
     }
     &__author{
         font-style: italic;
