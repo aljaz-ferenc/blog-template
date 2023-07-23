@@ -1,7 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 export default function BlogCard({title, description, slug, image, date}) {
+  const location = useLocation()
+  const params = useParams()
 
   return (
     <div className="blog-card">
@@ -13,7 +15,7 @@ export default function BlogCard({title, description, slug, image, date}) {
         <p>
           {description}
         </p>
-        <Link className="blog-card__link" to={`${slug}`}>Read More...</Link>
+        <Link className="blog-card__link" to={location.pathname.startsWith('/posts') ? `/posts/${slug}` : `${slug}`}>Read More...</Link>
       </div>
     </div>
   );

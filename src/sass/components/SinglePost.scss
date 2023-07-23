@@ -33,4 +33,12 @@
         font-weight: lighter;
         font-size: .9rem;
     }
+    &__footer{
+        margin-top: 8rem;
+        &--posts{
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+    }
 }

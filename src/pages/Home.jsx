@@ -1,11 +1,12 @@
 import React from "react";
 import BlogCard from "../components/BlogCard";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link} from "react-router-dom";
 import bgImg from '../assets/images/mainImg.png'
+import { usePosts } from "../postsContext";
 
 export default function Home() {
 
-  const posts = useLoaderData()
+  const posts = usePosts()
 
   return (
     <div className="home">
@@ -19,8 +20,8 @@ export default function Home() {
         <p>Hey there, welcome to my blog!</p>
         <p>
           This blog is all about my journey of learning frontend development,
-          where I share my experiences, insights, and struggles along the way. I
-          started this blog as a way to document my progress and share my
+          where I share my experiences and insights along the way. I
+          started this blog as a way to document my progress, take notes and share my
           learnings with others who are also interested in frontend web
           development. I understand how overwhelming it can be to navigate the
           plethora of technologies and tools that are out there and I hope you
@@ -31,10 +32,10 @@ export default function Home() {
       <div className="home__popular">
       <hr style={{margin: "2rem 0"}}/>
         <h2>Newest posts</h2>
-        <div className="popular__container">
+        {posts.length > 0 && <div className="popular__container">
           <BlogCard image={posts[0].mainImage.asset.url} title={posts[0].title} slug={`posts/${posts[0].slug.current}`} description={posts[0].description}></BlogCard>
           <BlogCard image={posts[1].mainImage.asset.url} title={posts[1].title} slug={`posts/${posts[1].slug.current}`} description={posts[1].description}></BlogCard>
-        </div>
+        </div>}
       </div> 
     </div>
   );
