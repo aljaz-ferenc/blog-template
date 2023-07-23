@@ -12,8 +12,6 @@ import { usePosts } from "../postsContext";
 const dateFormatter = Intl.DateTimeFormat("en-GB", { dateStyle: "full" });
 
 export default function SinglePost() {
-  const { post } = useParams();
-  // const [postData, setPostData] = useState(null);
   const postData = useLoaderData()[0]
   const posts = usePosts();
 
@@ -59,7 +57,7 @@ export default function SinglePost() {
       <div className="post__footer">
       <hr />
         <h3>See other posts</h3>
-        <div className="post__footer--posts">
+        {posts.length > 0 && <div className="post__footer--posts">
           <BlogCard
             key={posts[0].slug.current}
             slug={posts[0].slug.current}
@@ -76,7 +74,7 @@ export default function SinglePost() {
             image={posts[1].mainImage.asset.url}
             date={posts[1].publishedAt}
           />
-        </div>
+        </div>}
       </div>
     </div>
   );
