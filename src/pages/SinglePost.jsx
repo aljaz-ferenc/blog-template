@@ -14,6 +14,17 @@ const dateFormatter = Intl.DateTimeFormat("en-GB", { dateStyle: "full" });
 export default function SinglePost() {
   const postData = useLoaderData()[0]
   const posts = usePosts();
+  const [iframe, setIframe] = useState(null)
+
+  useEffect(() => {
+    postData.body.forEach(obj => {
+      if(obj._type === 'iframe'){
+        console.log(obj)
+        setIframe(obj.iframe)
+      }
+    })
+    console.log('hi')
+  }, [])
 
   const serializers = {
     types: {
@@ -52,9 +63,10 @@ export default function SinglePost() {
               dataset="production"
             ></SanityBlockContent>
           </div>
+          {iframe && <iframe src={iframe} frameborder="0" width="100%" height='800'></iframe>}
         </div>
       
-      <div className="post__footer">
+      {/* <div className="post__footer">
       <hr />
         <h3>See other posts</h3>
         {posts.length > 0 && <div className="post__footer--posts">
@@ -75,7 +87,7 @@ export default function SinglePost() {
             date={posts[1].publishedAt}
           />
         </div>}
-      </div>
+      </div> */}
     </div>
   );
 }
