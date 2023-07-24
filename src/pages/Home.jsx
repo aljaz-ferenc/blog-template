@@ -1,6 +1,6 @@
 import React from "react";
 import BlogCard from "../components/BlogCard";
-import { Link} from "react-router-dom";
+import { Link, useNavigation} from "react-router-dom";
 import bgImg from '../assets/images/mainImg.png'
 import { usePosts } from "../postsContext";
 

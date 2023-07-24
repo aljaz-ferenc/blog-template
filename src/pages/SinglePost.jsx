@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useNavigation, useParams } from "react-router";
 import sanityClient from "../sanityClient";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -15,7 +15,7 @@ export default function SinglePost() {
   const postData = useLoaderData()[0]
   const posts = usePosts();
   const [iframe, setIframe] = useState(null)
-
+  
   useEffect(() => {
     postData.body.forEach(obj => {
       if(obj._type === 'iframe'){
@@ -23,7 +23,6 @@ export default function SinglePost() {
         setIframe(obj.iframe)
       }
     })
-    console.log('hi')
   }, [])
 
   const serializers = {
